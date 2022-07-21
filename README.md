@@ -1,5 +1,5 @@
 # Bikes_Google_Capstone
-Capstone Project for the Google Data Analytics' Certification Programs
+Capstone Project for the Google Data Analytics' Certification Program
 
 --After cleaning some of the data in Excel by deleting column I will not be using. I loaded all 12 months data into SQL and unioned them all together to create one table
 
