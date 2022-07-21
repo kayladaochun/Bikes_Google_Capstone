@@ -1,6 +1,10 @@
 # Bikes_Google_Capstone
 Capstone Project for the Google Data Analytics' Certification Program
 
+Link to Tableau for visualization of this project
+
+https://public.tableau.com/views/CyclisticJune2021toMay2022/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
+
 --After cleaning some of the data in Excel by deleting column I will not be using. I loaded all 12 months data into SQL and unioned them all together to create one table
 
 SELECT*
