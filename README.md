@@ -82,6 +82,38 @@ SELECT ridelength, memberorcasual, COUNT(ridelength) OVER (PARTITION BY memberor
 FROM over_20_ride
 ORDER BY memberorcasual, ridelength desc
 
+--Using CTE to find out how many casual riders rode over 20 minutes
+
+WITH cte AS
+(
+SELECT memberorcasual, ridelength, COUNT(ridelength) as total_ridelength
+FROM SQLTutorial.dbo.bike_capstone_cleaned
+WHERE ridelength < '10:00:00' AND memberorcasual ='casual'
+GROUP By ROLLUP (memberorcasual, ridelength)
+)
+
+SELECT COUNT(memberorcasual) AS num_casual_riders_over_20_minutes
+FROM cte
+
+--Using CTE to find out how many member riders rode over 20 minutes
+
+WITH
+member AS
+(
+SELECT memberorcasual, ridelength, COUNT(ridelength) as total_ridelength
+FROM SQLTutorial.dbo.bike_capstone_cleaned
+WHERE ridelength < '10:00:00' AND memberorcasual ='member'
+GROUP By ROLLUP (memberorcasual, ridelength)
+)
+
+SELECT COUNT(memberorcasual) AS num_members_riders_over_20_minutes
+FROM member
+
+
+
+
+
+
 
 
 
